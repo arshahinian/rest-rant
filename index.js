@@ -33,10 +33,10 @@ app.get('/count/:ceiling',(req,res) => {
 
 
 
-app.use('/controllers',require('./controllers/exampleControllers.js'))
+app.use('/places',require('./controllers/places.js'))
 
 app.get('*',(req,res) => {
-    res.send('<h3>You are lost!</h3>')
+    res.send('<h1>404 Page</h1>')
 })
 
 app.listen(PORT,() => {
