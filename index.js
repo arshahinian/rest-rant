@@ -38,8 +38,8 @@ app.get('/count/:ceiling',(req,res) => {
 
 app.use('/places',require('./controllers/places.js'))
 
-app.get('*',(req,res) => {
-    res.send('<h1>404 Page</h1>')
+app.get('*', (req, res) => {
+    res.render('error404')
 })
 
 app.listen(PORT,() => {
