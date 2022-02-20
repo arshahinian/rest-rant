@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router();
 
 router.get('/',(req,res) => {
-    res.send(`<h1>Get /places</h1>`);
+    res.render(`places/index`);
 })
 
 router.post('/',(req,res) => {

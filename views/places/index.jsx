@@ -1,14 +1,13 @@
 const React = require('react')
-const masterDefault = require('./default')
-
-function home () {
+const masterDefault = require('../default')
+function index () {
     return (
       <masterDefault>
           <main>
-              <h1>HOME</h1>
+              <h1>Hello Index!</h1>
           </main>
       </masterDefault>
     )
   }
 
-module.exports = home
+  module.exports = index
