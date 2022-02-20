@@ -1,13 +1,13 @@
 const React = require('react')
-const masterDefault = require('./default')
+const MasterDefault = require('./default')
 
 function home () {
     return (
-      <masterDefault>
+      <MasterDefault>
           <main>
               <h1>HOME</h1>
           </main>
-      </masterDefault>
+      </MasterDefault>
     )
   }
 

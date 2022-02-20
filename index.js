@@ -34,7 +34,8 @@ app.get('/count/:ceiling',(req,res) => {
     res.send(`<h1>${message}</h1>`);
 })
 
-
+// STATIC
+app.use(express.static('public'))
 
 app.use('/places',require('./controllers/places.js'))
 
