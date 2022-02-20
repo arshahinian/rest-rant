@@ -9,10 +9,13 @@ const AUTH = process.env.AUTH;
 console.log(`ENV PORT: ${PORT}`)
 console.log(`ENV AUTH: ${AUTH}`)
 
+app.set('view engine','jsx')
+app.engine('jsx',require('express-react-views').createEngine())
+
 app.get('/',(req,res) => {
     let randomNumber = Math.random();
     console.log(randomNumber)
-    res.send(`<h1>${randomNumber}</h1>`);
+    res.render(`home`);
 })
 
 app.get('/count/:ceiling',(req,res) => {
