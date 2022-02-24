@@ -3,17 +3,23 @@ const router = express.Router();
 
 router.get('/',(req,res) => {
     let places = [{
-        name: 'Savor',
+        name: 'Hungry Hamburger',
         city: 'Somerville',
         state: 'NJ',
-        cuisines: 'Steaks, seafood, housemade pastas & more served in a classy atmosphere with sidewalk tables.',
-        pic: '/images/flowers.png'
+        cuisines: 'Hamburgers, Fries, and great Soda.',
+        pic: '/images/HungryHamburger.png'
       }, {
-        name: 'Cafe Picasso',
+        name: 'Main Street Pizza',
         city: 'Somerville',
         state: 'NJ',
-        cuisines: 'Southern Italian specialties, pastas & espresso bar in rustic, art-filled venue with outdoor dining.',
-        pic: '/images/lobster.png'
+        cuisines: 'Pizza, Salad, and Soups of all types.',
+        pic: '/images/MainStreetPizza.png'
+      }, {
+        name: 'The Good Cone',
+        city: 'Somerville',
+        state: 'NJ',
+        cuisines: 'Ice Cream, Cake, and Good Coffee.',
+        pic: '/images/TheGoodCone.png'
       }]
     res.render('places/index',{places});
 })
