@@ -5,7 +5,7 @@ function home () {
     return (
       <MasterDefault>
           <main>
-              <h1>HOME</h1>
+              <h1>REST-Rant</h1>
               <div>
                 <img className="img-home" src="/images/deryn-macey-IooxyWj2uso-unsplash_small.jpg" alt="food"/>
                   <div>
