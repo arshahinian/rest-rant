@@ -34,6 +34,8 @@ app.get('/count/:ceiling',(req,res) => {
     res.send(`<h1>${message}</h1>`);
 })
 
+app.use(express.urlencoded({ extended: true }))
+
 // STATIC
 app.use(express.static('public'))
 
