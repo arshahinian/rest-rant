@@ -3,6 +3,7 @@ const express = require('express')
 const app = express()
 
 require('dotenv').config()
+const methodOverride = require('method-override')
 
 const PORT = process.env.PORT;
 const AUTH = process.env.AUTH;
@@ -35,6 +36,7 @@ app.get('/count/:ceiling',(req,res) => {
 })
 
 app.use(express.urlencoded({ extended: true }))
+app.use(methodOverride('_method'))
 
 // STATIC
 app.use(express.static('public'))
