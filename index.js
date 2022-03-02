@@ -41,6 +41,7 @@ app.use(methodOverride('_method'))
 // STATIC
 app.use(express.static('public'))
 
+//PLACES CONTROLLER LOCATION
 app.use('/places',require('./controllers/places.js'))
 
 app.get('*', (req, res) => {
