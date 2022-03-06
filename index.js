@@ -7,6 +7,7 @@ const methodOverride = require('method-override')
 
 const PORT = process.env.PORT;
 const AUTH = process.env.AUTH;
+
 console.log(`ENV PORT: ${PORT}`)
 console.log(`ENV AUTH: ${AUTH}`)
 
@@ -51,3 +52,7 @@ app.get('*', (req, res) => {
 app.listen(PORT,() => {
     console.log('listening on port: ',PORT);
 })
+
+
+
+
