@@ -5,18 +5,18 @@ function editForm (props) {
     return (
         <MasterDefault>
             <h1>Add a New Place</h1>
-            <form method="POST" action={`/places/${props.id}?_method=PUT`}>
+            <form method="POST" action={`/places/${props.place.id}?_method=PUT`}>
                 <div className="form-group">
                     <label htmlFor="name">Place Name:</label>
                     <input className="form-control" id="name" name="name" value={props.place.name} required/>
                 </div>
                 <div className="form-group">
                     <label htmlFor="pic">Place Picture:</label>
-                    <input className="form-control" type="url" id="pic" name="pic" />
+                    <input className="form-control" id="pic" name="pic" value={props.place.pic}/>
                 </div>
                 <div className="form-group">
                     <label htmlFor="city">City:</label>
-                    <input className="form-control" id="city" name="city" />
+                    <input className="form-control" id="city" name="city" value={props.place.city}/>
                 </div>
                 <div className="form-group">
                     <label htmlFor="state">State:</label>
@@ -75,7 +75,7 @@ function editForm (props) {
                 </div>
                 <div className="form-group">
                     <label htmlFor="cuisines">Cuisines:</label>
-                    <input className="form-control" id="cuisines" name="cuisines" required/>
+                    <input className="form-control" id="cuisines" name="cuisines" value={props.place.cuisines} required/>
                 </div>
                 <input className="btn btn-primary" type="submit" value="Change Place"></input>
             </form>
