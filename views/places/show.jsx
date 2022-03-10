@@ -9,7 +9,7 @@ function show (props) {
     )
     let rating = (
       <h3 className="inactive">
-        No comments yet!
+        No ratings yet!
       </h3>
     )
     if (props.place.comments.length) {
@@ -30,10 +30,15 @@ function show (props) {
       let sumRatings = props.place.comments.reduce((tot, c) => {
         return tot + c.stars
       }, 0)
-      let averageRating = sumRatings / props.place.comments.length
+      let averageRating = Math.round(sumRatings / props.place.comments.length)
+      let stars = '';
+      for(let i = 0 ; i < averageRating ; i++)
+      {
+        stars += '*'
+      }
       rating = (
         <h3>
-          {Math.round(averageRating)} stars
+          {stars} stars
         </h3>
       )
     }
