@@ -46,9 +46,9 @@ function show (props) {
                 <p>{comments}</p>
                 <br/>
                 <p>
-                  <a href={`/places/${props.id}/edit`} className="btn btn-warning">Edit</a>  
+                  <a href={`/places/${props.place.id}/edit`} className="btn btn-warning">Edit</a>  
                 </p>            
-                <form method="POST" action={`/places/${props.id}?_method=DELETE`}> 
+                <form method="POST" action={`/places/${props.place.id}?_method=DELETE`}> 
                   <button type="submit" className="btn btn-danger">Delete</button>
                 </form>
                 <br/>
