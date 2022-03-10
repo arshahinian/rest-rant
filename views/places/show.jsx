@@ -7,6 +7,11 @@ function show (props) {
         No comments yet!
       </h3>
     )
+    let rating = (
+      <h3 className="inactive">
+        No comments yet!
+      </h3>
+    )
     if (props.place.comments.length) {
       comments = props.place.comments.map(c =>{
         return (
@@ -22,6 +27,15 @@ function show (props) {
           </div>
         )
       })
+      let sumRatings = props.place.comments.reduce((tot, c) => {
+        return tot + c.stars
+      }, 0)
+      let averageRating = sumRatings / props.place.comments.length
+      rating = (
+        <h3>
+          {Math.round(averageRating)} stars
+        </h3>
+      )
     }
     return (
         <MasterDefault>
@@ -37,7 +51,9 @@ function show (props) {
               <div className="col-sm-6">
                 <br/>
                 <h1>{props.place.name}</h1>
-                <br/>               
+                <br/>
+                <h2>Rating</h2>{rating}
+                <br/>
                 <h2>Description</h2>
                 <h3>{props.place.showEstablished()}</h3>
                 <h4>Serving {props.place.cuisines}</h4>
