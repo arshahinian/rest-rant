@@ -2,6 +2,27 @@ const React = require('react')
 const MasterDefault = require('../default')
 
 function show (props) {
+    let comments = (
+      <h3 className="inactive">
+        No comments yet!
+      </h3>
+    )
+    if (props.place.comments.length) {
+      comments = props.place.comments.map(c =>{
+        return (
+          <div className="border">
+            <h2 className="rant">
+              {c.rant ? 'Rant! :(':'Rave! :)'}
+            </h2>
+            <h4>{c.content}</h4>
+            <h3>
+              <strong>-{c.author}</strong>
+            </h3>
+            <h4>Rating: {c.stars}</h4>
+          </div>
+        )
+      })
+    }
     return (
         <MasterDefault>
           <main>
@@ -22,7 +43,7 @@ function show (props) {
                 <h4>Serving {props.place.cuisines}</h4>
                 <br/>      
                 <h2>Comments</h2>
-                <p>Coming Soon!</p>
+                <p>{comments}</p>
                 <br/>
                 <p>
                   <a href={`/places/${props.id}/edit`} className="btn btn-warning">Edit</a>  
