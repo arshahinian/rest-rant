@@ -38,7 +38,7 @@ function show (props) {
       }
       rating = (
         <h3>
-          {stars} stars
+          {stars == '' ? stars = '0' : stars} stars
         </h3>
       )
     }

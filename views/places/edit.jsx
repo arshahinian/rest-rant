@@ -77,7 +77,16 @@ function editForm (props) {
                     <label htmlFor="cuisines">Cuisines:</label>
                     <input className="form-control" id="cuisines" name="cuisines" value={props.place.cuisines} required/>
                 </div>
-                <input className="btn btn-primary" type="submit" value="Change Place"></input>
+                <div className="form-group col-sm-4">
+                    <label htmlFor="founded">Founded Year</label>
+                    <input 
+                        type="number" 
+                        className="form-control" 
+                        id="founded" 
+                        name="founded" 
+                        value={props.place.founded} />
+                </div>
+                <input className="btn btn-primary" type="submit" value="Update Place"></input>
             </form>
         </MasterDefault>
     )

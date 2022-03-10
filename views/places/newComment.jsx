@@ -19,8 +19,8 @@ function newCommentForm (props) {
                     <input className="form-control" type="number" min="0" max="5" id="stars" name="stars" />
                 </div>                
                 <div className="form-group">
-                    <label htmlFor="rant">Rant:</label>
-                    <input className="form-control" type="checkbox" id="rant" name="rant"/>
+                    <label className="form-check-label" htmlFor="rant">Is this a Rant? (Please check the box if it is!)</label>                                       
+                    <input className="form-check-input" type="checkbox" id="rant" name="rant"/>                    
                 </div>        
                 <input className="btn btn-primary" type="submit" value="Add Comment"></input>
             </form>
