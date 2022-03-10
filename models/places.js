@@ -10,7 +10,11 @@ const placeSchema = new mongoose.Schema({
     type: Number,
     min: [1673,'There is no way this place is that old!'],
     max: [new Date().getFullYear(),'Are you from the future?  What are the winning lotto numbers?']
-  }
+  },
+  comments:[{
+    type: mongoose.Schema.Types.ObjectId,
+    ref:'Comment'
+  }]
 })
 
 placeSchema.methods.showEstablished = function() {
@@ -18,24 +22,3 @@ placeSchema.methods.showEstablished = function() {
 }
 
 module.exports = mongoose.model('Place', placeSchema)
-
-/* PENDING TO BD DELETED */
-// module.exports = [{
-//     name: 'Hungry Hamburger',
-//     city: 'Somerville',
-//     state: 'NJ',
-//     cuisines: 'Hamburgers, Fries, and great Soda.',
-//     pic: '/images/HungryHamburger.png'
-//   }, {
-//     name: 'Main Street Pizza',
-//     city: 'Somerville',
-//     state: 'NJ',
-//     cuisines: 'Pizza, Salad, and Soups of all types.',
-//     pic: '/images/MainStreetPizza.png'
-//   }, {
-//     name: 'The Good Cone',
-//     city: 'Somerville',
-//     state: 'NJ',
-//     cuisines: 'Ice Cream, Cake, and Good Coffee.',
-//     pic: '/images/TheGoodCone.png'
-//   }]
